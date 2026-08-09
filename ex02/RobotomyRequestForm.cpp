@@ -30,7 +30,7 @@ RobotomyRequestForm::~RobotomyRequestForm()
     std::cout << "RobotomyRequestForm destructor called" << std::endl;
 }
 
-void RobotomyRequestForm::execute() const
+void RobotomyRequestForm::executeAction() const
 {
     std::cout << "BZZZZZ.... DRILLING NOISES...." << std::endl;
     if (rand() % 2)

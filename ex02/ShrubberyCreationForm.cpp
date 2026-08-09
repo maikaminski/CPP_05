@@ -30,7 +30,7 @@ ShrubberyCreationForm::~ShrubberyCreationForm()
     std::cout << "ShrubberyCreationForm destructor called" << std::endl;
 }
 
-void ShrubberyCreationForm::execute() const
+void ShrubberyCreationForm::executeAction() const
 {
     std::ofstream file((_target + "_shrubbery").c_str());
     if(!file)

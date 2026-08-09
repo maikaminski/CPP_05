@@ -22,10 +22,9 @@ class AForm
         AForm &operator=(const AForm &other);
         virtual ~AForm();
 
-        virtual void execute(Bureaucrat const & executor) const = 0;
+        virtual void execute(Bureaucrat const & executor) const;
 
         void beSigned(const Bureaucrat &b);
-        void execute(const Bureaucrat &executor) const;
 
         const std::string &getName() const;
         bool isSigned() const;
@@ -48,6 +47,8 @@ class AForm
                  const char* what() const throw();
         };
 
+    protected:
+        virtual void executeAction() const = 0;
 };
 std::ostream &operator<<(std::ostream &out, const AForm &f);
 #endif
