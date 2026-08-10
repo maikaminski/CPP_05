@@ -25,15 +25,9 @@ int main()
     delete pardon;
 
     std::cout << "\n=== Test 4: Intern tries unknown form ===" << std::endl;
-    try
-    {
-        AForm *unknown = intern.makeForm("unknown form", "target");
+    AForm *unknown = intern.makeForm("unknown form", "target");
+    if (unknown)
         delete unknown;
-    }
-    catch (std::exception &e)
-    {
-        std::cout << "Error: " << e.what() << std::endl;
-    }
 
     return 0;
 }

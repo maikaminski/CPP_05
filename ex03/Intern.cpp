@@ -26,11 +26,6 @@ Intern::~Intern()
     std::cout << "Intern destructor called" << std::endl;
 }
 
-const char* Intern::UnknownFormException::what() const throw()
-{
-    return "unknown form name";
-}
-
 static AForm *makeShrubbery(const std::string &target) { return new ShrubberyCreationForm(target); }
 static AForm *makeRobotomy(const std::string &target)  { return new RobotomyRequestForm(target); }
 static AForm *makePardon(const std::string &target)    { return new PresidentialPardonForm(target); }
@@ -56,5 +51,6 @@ AForm *Intern::makeForm(const std::string &formName, const std::string &target) 
             return makers[i](target);
         }
     }
-    throw UnknownFormException();
+    std::cerr << "Intern: error: form '" << formName << "' does not exist" << std::endl;
+    return NULL;
 }
