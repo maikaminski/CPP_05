@@ -6,7 +6,7 @@ int main()
     std::cout << "===== TESTE 1: criação válida =====" << std::endl;
     try
     {
-        Bureaucrat bob("Bob", 50);
+        Bureaucrat bob("Bob", 20);
         Form taxForm("Tax Form", 45, 30);
 
         std::cout << bob << std::endl;
